@@ -35,6 +35,7 @@ class Usuario(BaseModel):
 def obtener_animales():
     return animales
 
+
 #Endpoint para registrar usuario
 @app.post("/registrar/")
 def registrar_usuario(usuario: Usuario):
