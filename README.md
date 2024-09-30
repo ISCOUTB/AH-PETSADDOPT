@@ -1,3 +1,4 @@
 # AH-PETSADDOPT
 
-centro de adopcion de mascotas
+Este proyecto se diseño en clase de Arquitectura de software; Se basa en Implementar un sistema de gestión automatizado que permitiría superar limitaciones y potenciar las capacidades de los centros de adopción de mascotas. Un sistema digitalizado garantizaría un registro centralizado y actualizado de la información animal, facilitando su seguimiento y cuidado, y permitiendo identificar tendencias y patrones para mejorar la atención.
+El proceso de adopción se agilizaría mediante un sistema automatizado que cruce de manera eficiente la información de animales y adoptantes, optimizando el emparejamiento y aumentando las posibilidades de adopción exitosa. La generación de información valiosa a partir del análisis de datos del sistema automatizado permitiría obtener historial sobre las adopciones, el comportamiento animal y las necesidades de la comunidad, para la toma de decisiones estratégicas y la mejora continua del centro.
