@@ -1,19 +1,19 @@
+# Usa una imagen base de Python
+FROM python:3.9
 
-FROM python:3.10-slim
 
-RUN apt-get update && apt-get install -y python3-tk
+WORKDIR /api
 
-WORKDIR /app
 
-COPY requirements.txt .
+COPY requirements.txt ./
+
 
 RUN pip install --no-cache-dir -r requirements.txt
 
 
 COPY . .
+EXPOSE 8021
 
-
-EXPOSE 8000
-
-
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Comando para ejecutar tu aplicación
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8021"]
+ 

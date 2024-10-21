@@ -1,0 +1,8 @@
+gui.show_client_registration
+5d3db1d7b00f8c6249526c16629b75b6
+gui.clear_window
+tkinter.Label.__init__
+tkinter.Button.__init__
+tkinter.Entry.__init__
+==
+pack

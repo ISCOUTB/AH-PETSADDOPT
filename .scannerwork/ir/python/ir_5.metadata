@@ -1,0 +1,8 @@
+gui.show_register_admin
+e9222b8c8419d8867f4ea7884d83a2b7
+gui.clear_window
+tkinter.Label.__init__
+tkinter.Button.__init__
+tkinter.Entry.__init__
+==
+pack

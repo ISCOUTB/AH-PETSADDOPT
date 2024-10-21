@@ -1,0 +1,7 @@
+gui.elegir_tipo_usuario
+f416c29785b57958bf0260de3cfb4bf3
+gui.clear_window
+tkinter.Label.__init__
+tkinter.Button.__init__
+==
+pack
