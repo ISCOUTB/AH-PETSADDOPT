@@ -5,14 +5,14 @@ services:
     build: ./api
     container_name: ah_petsaddopt_web
     ports:
-      - "7011 : 8000"
+      - "8021 : 8021"
   
     environment:
       - DB_NAME=Centro_animals
       - DB_USER=base1
       - DB_PASSWORD=123456
       - DB_HOST=db
-      - DB_PORT=5432
+      - DB_PORT=7012
     networks:
       - ag
 networks:
