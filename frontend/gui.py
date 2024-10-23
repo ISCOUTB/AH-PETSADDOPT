@@ -1,6 +1,6 @@
+
 import tkinter as tk
 from tkinter import messagebox
-import requests
 
 API_URL = 'http://127.0.0.1:8000'
 

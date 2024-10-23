@@ -1,12 +1,15 @@
-version: '3.8'
 
 services:
   api: 
-    build: ./api
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
     container_name: ah_petsaddopt_web
     ports:
-      - "8021 : 8021"
+        - "8021:8021"
   
+  db:
+    image: postgres:latest
     environment:
       - DB_NAME=Centro_animals
       - DB_USER=base1
@@ -14,9 +17,9 @@ services:
       - DB_HOST=db
       - DB_PORT=7012
     networks:
-      - ah
+      - ag
 networks:
-  ah: 
+  ag: 
     external : true
 
   
