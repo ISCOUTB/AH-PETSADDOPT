@@ -14,9 +14,9 @@ services:
       - DB_HOST=db
       - DB_PORT=7012
     networks:
-      - ag
+      - ah
 networks:
-  ag: 
+  ah: 
     external : true
 
   
