@@ -36,7 +36,7 @@ def show_admin_options():
     tk.Label(window, text="Opciones del Administrador").pack()
     tk.Button(window, text="Registrar Nuevo Administrador", command=show_register_admin).pack()
     tk.Button(window, text="Ver Datos de Animales", command=show_animal_data).pack()
-    tk.Button(window, text="Cerrar Sesión", command=elegir_tipo_usuario).pack()
+    tk.Button(window, text="Cerrar Sesion", command=elegir_tipo_usuario).pack()
 
 # Función para mostrar el registro de un nuevo administrador
 def show_register_admin():
@@ -82,7 +82,7 @@ def show_client_registration():
     lifestyle_entry = tk.Entry(window)
     lifestyle_entry.pack()
     tk.Button(window, text="Enviar", command=lambda: register_user(name_entry.get(), address_entry.get(), phone_entry.get(), email_entry.get(), family_entry.get(), lifestyle_entry.get())).pack()
-    tk.Button(window, text="Cerrar Sesión", command=elegir_tipo_usuario).pack()
+    tk.Button(window, text="Cerrar sesión", command=elegir_tipo_usuario).pack()
 
 # Función para registrar un nuevo cliente
 def register_user(name, address, phone, email, family_composition, lifestyle):
@@ -109,7 +109,7 @@ def show_animal_data():
     for animal in animals:
         animal_info = f"ID: {animal['id']}\nTipo: {animal['tipo']}\nRaza: {animal['raza']}\nEdad: {animal['edad']}\nVacunas: {', '.join(animal['vacunas'])}\nFotos: {', '.join(animal['fotos'])}\n"
         tk.Label(window, text=animal_info).pack()
-    tk.Button(window, text="Cerrar Sesión", command=elegir_tipo_usuario).pack()
+    tk.Button(window, text="Cerrar Sesionn", command=elegir_tipo_usuario).pack()
 
 # Función para limpiar la ventana
 def clear_window():
