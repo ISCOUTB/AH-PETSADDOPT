@@ -15,5 +15,5 @@ COPY . .
 EXPOSE 8021
 
 # Comando para ejecutar tu aplicación
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8021"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8021"]
  

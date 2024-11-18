@@ -1,25 +1,38 @@
-
 services:
-  api: 
-    build: 
+  db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_DB=Centro_animals
+      - POSTGRES_USER=base1
+      - POSTGRES_PASSWORD=123456
+    ports:
+      - "7011:5432"
+    networks:
+      - ag
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  api:
+    build:
       context: ./backend
       dockerfile: Dockerfile
     container_name: ah_petsaddopt_web
     ports:
-        - "8021:8021"
-  
-  db:
-    image: postgres:latest
+      - "8021:8021"
+    networks:
+      - ag
+    depends_on:
+      - db 
     environment:
+      - DB_HOST=db
+      - DB_PORT=5432
       - DB_NAME=Centro_animals
       - DB_USER=base1
       - DB_PASSWORD=123456
-      - DB_HOST=db
-      - DB_PORT=7012
-    networks:
-      - ag
-networks:
-  ag: 
-    external : true
 
-  
+networks:
+  ag:
+    external: true
+
+volumes:
+  db_data:  # Volumen para persistencia de datos en la base de datos
