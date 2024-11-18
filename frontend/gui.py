@@ -98,7 +98,7 @@ def show_client_registration():
     client_lifestyle_entry.pack(pady=5)
 
     ttk.Button(frame, text="Registrar", command=lambda: register_client(client_name_entry.get(), client_email_entry.get(), client_phone_entry.get(), client_family_entry.get(), client_lifestyle_entry.get())).pack(pady=10)
-    ttk.Button(frame, text="Atrás", command=elegir_tipo_usuario).pack()
+    ttk.Button(frame, text="Atras", command=elegir_tipo_usuario).pack()
 
 def register_client(name, email, phone, family, lifestyle):
     data = {
@@ -142,7 +142,7 @@ def show_admin_login():
     admin_password_entry.pack(pady=5)
 
     ttk.Button(frame, text="Login", command=lambda: admin_login(admin_username_entry.get(), admin_password_entry.get())).pack(pady=10)
-    ttk.Button(frame, text="Atrás", command=elegir_tipo_usuario).pack()
+    ttk.Button(frame, text="Volver", command=elegir_tipo_usuario).pack()
 
 def show_client_login():
     clear_window()
@@ -159,7 +159,7 @@ def show_client_login():
     client_password_entry.pack(pady=5)
 
     ttk.Button(frame, text="Login", command=lambda: client_login(client_username_entry.get(), client_password_entry.get())).pack(pady=10)
-    ttk.Button(frame, text="Atrás", command=elegir_tipo_usuario).pack()
+    ttk.Button(frame, text="Regresar", command=elegir_tipo_usuario).pack()
 
 def clear_window():
     for widget in window.winfo_children():
