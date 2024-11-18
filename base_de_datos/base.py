@@ -67,4 +67,3 @@ finally:
     # Asegurarse de cerrar la conexión si fue establecida
     if 'conn' in locals():
         conn.close()
-
