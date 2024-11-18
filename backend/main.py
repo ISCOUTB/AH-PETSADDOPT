@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from typing import List
 
 app = FastAPI()
-
+CON="contraseña"
 # Definición del modelo Animal
 class Animal(BaseModel):
     id: int
@@ -14,8 +14,8 @@ class Animal(BaseModel):
 
 # Simulando una base de datos de usuarios
 usuarios_db = {
-    "admin": {"contraseña": "admin123", "rol": "admin"},
-    "cliente": {"contraseña": "cliente123", "rol": "usuario"},
+    "admin": {CON: "admin123", "rol": "admin"},
+    "cliente": {CON: "cliente123", "rol": "usuario"},
 }
 
 animales_db = []
@@ -24,7 +24,7 @@ animales_db = []
 @app.post("/iniciar_sesion/")
 def iniciar_sesion(usuario: str, contrasena: str):
     user = usuarios_db.get(usuario)
-    if user and user["contraseña"] == contrasena:
+    if user and user[CON] == contrasena:
         return {"rol": user["rol"]}
     else:
         raise HTTPException(status_code=401, detail="Credenciales inválidas")

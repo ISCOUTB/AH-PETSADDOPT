@@ -1,8 +1,9 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 import requests
-
-API_URL = 'http://127.0.0.1:8000'
+Contra="contraseña:"
+use="usuario:"
+API_URL = 'http://127.0.0.1:8021'
 
 # --- Definiciones de funciones ---
 
@@ -109,7 +110,7 @@ def show_admin_login():
     admin_username_entry = ttk.Entry(frame, width=30)
     admin_username_entry.pack(pady=5)
 
-    ttk.Label(frame, text="Contraseña:").pack(anchor="w")
+    ttk.Label(frame, text=Contra).pack(anchor="w")
     admin_password_entry = ttk.Entry(frame, show="*", width=30)
     admin_password_entry.pack(pady=5)
 
@@ -122,11 +123,11 @@ def show_client_login():
     frame.pack(fill="both", expand=True)
 
     ttk.Label(frame, text="Iniciar Sesión como Cliente", font=("Arial", 16)).pack(pady=10)
-    ttk.Label(frame, text="Usuario:").pack(anchor="w")
+    ttk.Label(frame, text=use).pack(anchor="w")
     client_username_entry = ttk.Entry(frame, width=30)
     client_username_entry.pack(pady=5)
 
-    ttk.Label(frame, text="Contraseña:").pack(anchor="w")
+    ttk.Label(frame, text=Contra).pack(anchor="w")
     client_password_entry = ttk.Entry(frame, show="*", width=30)
     client_password_entry.pack(pady=5)
 
@@ -139,11 +140,11 @@ def show_client_register():
     frame.pack(fill="both", expand=True)
 
     ttk.Label(frame, text="Registrar como Cliente", font=("Arial", 16)).pack(pady=10)
-    ttk.Label(frame, text="Usuario:").pack(anchor="w")
+    ttk.Label(frame, text=use).pack(anchor="w")
     client_username_entry = ttk.Entry(frame, width=30)
     client_username_entry.pack(pady=5)
 
-    ttk.Label(frame, text="Contraseña:").pack(anchor="w")
+    ttk.Label(frame, text=Contra).pack(anchor="w")
     client_password_entry = ttk.Entry(frame, show="*", width=30)
     client_password_entry.pack(pady=5)
 
