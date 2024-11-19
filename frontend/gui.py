@@ -122,46 +122,46 @@ def show_delete_animal():
         
         def delete_animal():
             selected_animal = animal_combobox.get()
-    print(f"selected_animal: {selected_animal}")
-    
-    # Extraer tipo, raza y edad
-    try:
-        # Intentamos dividir el texto como tipo - raza (Edad: x)
-        parts = selected_animal.split(" - ")
-        if len(parts) == 2:
-            tipo = parts[0]
-            raza_y_edad = parts[1].strip()
-            # Encontrar la edad en el formato "(Edad: x)"
-            edad_str = raza_y_edad.split(" (Edad: ")
-            if len(edad_str) == 2:
-                raza = edad_str[0]
-                edad = int(edad_str[1].replace(")", ""))  # Extraer la edad y eliminar el paréntesis
-                
-                # Buscar el animal con estos datos
-                animal_data = {
-                    "tipo": tipo,
-                    "raza": raza,
-                    "edad": edad
-                }
-                print(f"Enviando solicitud de eliminación con los siguientes datos: {animal_data}")
-                
-                response = requests.delete(f"{API_URL}/animales/eliminar_por_datos/", json=animal_data)
-                
-                # Mostrar más información de la respuesta para depuración
-                print(f"Respuesta de la API: {response.status_code} - {response.text}")
-                
-                if response.status_code == 200:
-                    messagebox.showinfo("Éxito", "Animal eliminado exitosamente")
-                    show_admin_options()
+            print(f"selected_animal: {selected_animal}")
+            
+            # Extraer tipo, raza y edad
+            try:
+                # Intentamos dividir el texto como tipo - raza (Edad: x)
+                parts = selected_animal.split(" - ")
+                if len(parts) == 2:
+                    tipo = parts[0]
+                    raza_y_edad = parts[1].strip()
+                    # Encontrar la edad en el formato "(Edad: x)"
+                    edad_str = raza_y_edad.split(" (Edad: ")
+                    if len(edad_str) == 2:
+                        raza = edad_str[0]
+                        edad = int(edad_str[1].replace(")", ""))  # Extraer la edad y eliminar el paréntesis
+                        
+                        # Buscar el animal con estos datos
+                        animal_data = {
+                            "tipo": tipo,
+                            "raza": raza,
+                            "edad": edad
+                        }
+                        print(f"Enviando solicitud de eliminación con los siguientes datos: {animal_data}")
+                        
+                        response = requests.delete(f"{API_URL}/animales/eliminar_por_datos/", json=animal_data)
+                        
+                        # Mostrar más información de la respuesta para depuración
+                        print(f"Respuesta de la API: {response.status_code} - {response.text}")
+                        
+                        if response.status_code == 200:
+                            messagebox.showinfo("Éxito", "Animal eliminado exitosamente")
+                            show_admin_options()
+                        else:
+                            messagebox.showerror("Error", f"No se pudo eliminar el animal. Respuesta del servidor: {response.status_code} - {response.text}")
+                    else:
+                        messagebox.showerror("Error", "No se pudo extraer la edad correctamente.")
                 else:
-                    messagebox.showerror("Error", f"No se pudo eliminar el animal. Respuesta del servidor: {response.status_code} - {response.text}")
-            else:
-                messagebox.showerror("Error", "No se pudo extraer la edad correctamente.")
-        else:
-            messagebox.showerror("Error", "El formato del animal seleccionado es incorrecto.")
-    except Exception as e:
-        print(f"Error procesando la selección: {e}")
-        messagebox.showerror("Error", f"Error procesando la eliminación: {e}")
+                    messagebox.showerror("Error", "El formato del animal seleccionado es incorrecto.")
+            except Exception as e:
+                print(f"Error procesando la selección: {e}")
+                messagebox.showerror("Error", f"Error procesando la eliminación: {e}")
 
 
 
