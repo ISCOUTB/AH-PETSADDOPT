@@ -1,0 +1,10 @@
+gui.elegir_tipo_usuario
+false
+72be8263925624ebab56df4ef148e957
+gui.clear_window
+==
+Button
+Frame
+Label
+pack
+place

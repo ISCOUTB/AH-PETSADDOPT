@@ -1,0 +1,11 @@
+gui.show_add_animal
+false
+2f5ee595c92f9783fc895f9303424269
+gui.clear_window
+==
+Button
+Entry
+Frame
+Label
+pack
+place

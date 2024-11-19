@@ -1,7 +1,7 @@
 organization=isco-utb
 projectKey=ISCOUTB_AH-PETSADDOPT
 serverUrl=https://sonarcloud.io
-serverVersion=8.0.0.56801
+serverVersion=8.0.0.57796
 dashboardUrl=https://sonarcloud.io/dashboard?id=ISCOUTB_AH-PETSADDOPT
-ceTaskId=AZJNUwza8d3_B_tl20yw
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZJNUwza8d3_B_tl20yw
+ceTaskId=AZNEn02NX8GAonPEzSqA
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZNEn02NX8GAonPEzSqA

@@ -1,3 +1,28 @@
-'
-main.Usuariopydantic.main.BaseModel&
-main.Animalpydantic.main.BaseModel
+
+objectNoneTypeobject9datetime.tzinfo*$
+__init__datetime.tzinfo.__init__èdatetime.datetimedatetime.date**
+
+astimezonedatetime.datetime.astimezone* 
+todaydatetime.datetime.today*
+nowdatetime.datetime.now*,
+fromordinaldatetime.datetime.fromordinal*"
+utcnowdatetime.datetime.utcnow*6
+utcfromtimestamp"datetime.datetime.utcfromtimestamp*&
+strptimedatetime.datetime.strptime*0
+fromtimestampdatetime.datetime.fromtimestamp*&
+__init__datetime.datetime.__init__*$
+combinedatetime.datetime.combine*$
+replacedatetime.datetime.replaceÕdatetime.date* 
+replacedatetime.date.replace*"
+__init__datetime.date.__init__*
+todaydatetime.date.today*,
+fromtimestampdatetime.date.fromtimestamp*0
+fromisocalendardatetime.date.fromisocalendarintobjectistrtyping.Sequencetyping.Collectiontyping.Containertyping.Iterableobjecttyping.Reversibledtyping.Sequencetyping.Collectiontyping.Containertyping.Iterableobjecttyping.Reversible@typing.Collectiontyping.Containertyping.Iterableobjecttyping.Containerobjecttyping.Iterableobject.typing.Reversibletyping.IterableobjectXbuiltins._StubIteratortyping.Iterable*+
+__init__builtins._StubIterator.__init__boolintobject®test_gui.TestGUIunittest.case.TestCase*C
+test_admin_login_button(test_gui.TestGUI.test_admin_login_button*;
+test_client_options$test_gui.TestGUI.test_client_options,typing.Iteratorobjecttyping.Iterable
+objecttyping.IterableobjectboolobjectintintobjectNoneTypeobjectistrtyping.Sequencetyping.Collectiontyping.Containertyping.Iterableobjecttyping.Reversibledtyping.Sequencetyping.Collectiontyping.Containertyping.Iterableobjecttyping.Reversible@typing.Collectiontyping.Containertyping.Iterableobjecttyping.Containerobject.typing.Reversibletyping.Iterableobjectktupletyping.Sequencetyping.Collectiontyping.Containertyping.Iterableobjecttyping.ReversiblePtyping.Mappingtyping.Collectiontyping.Containertyping.Iterableobjectgtyping.MutableMappingtyping.Mappingtyping.Collectiontyping.Containertyping.Iterableobjectmdicttyping.MutableMappingtyping.Mappingtyping.Collectiontyping.Containertyping.Iterableobject$requests.models.Responseobjectfloatobject|typing.MutableSequencetyping.Sequencetyping.Collectiontyping.Containertyping.Iterableobjecttyping.Reversible‚listtyping.Sequencetyping.Collectiontyping.Containertyping.Iterabletyping.MutableSequenceobjecttyping.Reversibletkinter.Miscobject
+tkinter.Wmobject0
+tkinter.Tktkinter.Miscobject
+tkinter.Wmistrtyping.Sequencetyping.Collectiontyping.Containertyping.Iterableobjecttyping.Reversibledtyping.Sequencetyping.Collectiontyping.Containertyping.Iterableobjecttyping.Reversible@typing.Collectiontyping.Containertyping.Iterableobjecttyping.Containerobject
+objecttyping.Iterableobject.typing.Reversibletyping.IterableobjectNoneTypeobjectmdicttyping.MutableMappingtyping.Mappingtyping.Collectiontyping.Containertyping.Iterableobjectgtyping.MutableMappingtyping.Mappingtyping.Collectiontyping.Containertyping.IterableobjectPtyping.Mappingtyping.Collectiontyping.Containertyping.Iterableobjectintobject‚listtyping.Sequencetyping.Collectiontyping.Containertyping.Iterabletyping.MutableSequenceobjecttyping.Reversible|typing.MutableSequencetyping.Sequencetyping.Collectiontyping.Containertyping.Iterableobjecttyping.Reversible

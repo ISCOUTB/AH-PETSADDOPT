@@ -1,0 +1,10 @@
+gui.show_add_animal.add_animal
+false
+f8581c88c3e7ef589c1125fa68602a67
+builtins.int
+gui.show_admin_options
+requests.api.post
+==
+get
+showerror
+showinfo

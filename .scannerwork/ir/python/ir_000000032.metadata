@@ -1,0 +1,10 @@
+gui.show_admin_login
+false
+a1e01bde16a5a9f8c9d46c415a9baa51
+gui.clear_window
+==
+Button
+Entry
+Frame
+Label
+pack

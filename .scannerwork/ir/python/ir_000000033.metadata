@@ -1,0 +1,7 @@
+gui.admin_login
+false
+be5e048104853eb75929e0691176ad58
+gui.show_admin_options
+requests.api.post
+==
+showerror

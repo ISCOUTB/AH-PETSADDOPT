@@ -1,0 +1,9 @@
+gui.clear_window
+false
+110333e9a3e73d0193320ec4146183ea
+builtins.__has_next
+builtins.iter
+builtins.next
+==
+destroy
+winfo_children

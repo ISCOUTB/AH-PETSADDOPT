@@ -1,7 +1,0 @@
-gui.show_admin_options
-6124dbabd26cb5f72e029d1300451405
-gui.clear_window
-tkinter.Label.__init__
-tkinter.Button.__init__
-==
-pack

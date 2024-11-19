@@ -1,0 +1,8 @@
+gui.show_client_options
+false
+19280dddacaffc5f43550fa25d71be60
+gui.clear_window
+==
+Button
+Label
+pack

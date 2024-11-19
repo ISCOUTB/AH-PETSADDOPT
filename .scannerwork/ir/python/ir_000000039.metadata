@@ -1,0 +1,13 @@
+gui.show_delete_animal
+false
+d26bd94eb31242b14d627f79b956f14c
+builtins.__has_next
+builtins.iter
+builtins.next
+gui.clear_window
+requests.api.get
+==
+Combobox
+Label
+append
+pack

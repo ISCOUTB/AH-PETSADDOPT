@@ -1,0 +1,13 @@
+gui.show_animal_data
+false
+826e91e825c034e6c6dd7d32ced641e2
+builtins.__has_next
+builtins.iter
+builtins.next
+gui.clear_window
+requests.api.get
+==
+Button
+Label
+pack
+showerror

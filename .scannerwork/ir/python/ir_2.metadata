@@ -1,8 +1,0 @@
-gui.show_admin_login
-b5503577bf713a115a7773c376b44582
-gui.clear_window
-tkinter.Label.__init__
-tkinter.Button.__init__
-tkinter.Entry.__init__
-==
-pack

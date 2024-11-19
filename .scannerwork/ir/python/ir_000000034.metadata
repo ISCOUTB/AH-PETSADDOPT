@@ -1,0 +1,8 @@
+gui.show_admin_options
+false
+8980af691f4d936054a9e46544a5e1b7
+gui.clear_window
+==
+Button
+Label
+pack

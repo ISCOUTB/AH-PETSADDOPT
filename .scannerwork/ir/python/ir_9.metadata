@@ -1,8 +1,0 @@
-gui.show_animal_data
-11492e8abadafdaa03a5279f03f0bf15
-gui.clear_window
-tkinter.Label.__init__
-requests.api.get
-tkinter.Button.__init__
-==
-pack
