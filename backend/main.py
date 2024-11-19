@@ -3,12 +3,9 @@ from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel
 from typing import List
 import bcrypt
-import os
 
 # Configuración de conexión a la base de datos PostgreSQL
-user = os.environ["base1"]
-password = os.environ["123456"]
-DATABASE_URL = "postgresql://base1:123456@db:5432/Centro_animals"
+DATABASE_URL = "postgresql://base1:123456@db:5432/Centro_animals" 
 
 # Crear la instancia de la API
 app = FastAPI()
@@ -133,27 +130,8 @@ def obtener_animales():
         for animal in animals
     ]
 
-# Ruta para agregar un nuevo animal
-@app.post("/animales/", response_model=Animal)
-def agregar_animal(animal: Animal):
-    query = """
-    INSERT INTO animales (tipo, raza, edad, vacunas)
-    VALUES (%s, %s, %s, %s) RETURNING id;
-    """
-    params = (animal.tipo, animal.raza, animal.edad, animal.vacunas)
-    conn = get_db()
-    cursor = conn.cursor()
-    try:
-        cursor.execute(query, params)
-        animal_id = cursor.fetchone()[0]
-        conn.commit()
-        return {**animal.dict(), "id": animal_id}
-    finally:
-        cursor.close()
-        conn.close()
-
-# Ruta para eliminar un animal
-@app.delete("/animales/{animal_id}", response_model=Animal)
+# Ruta para eliminar un animal por su ID
+@app.delete("/animales/eliminar/{animal_id}", response_model=Animal)
 def eliminar_animal(animal_id: int):
     conn = get_db()
     cursor = conn.cursor()
@@ -167,29 +145,6 @@ def eliminar_animal(animal_id: int):
         cursor.execute(query, (animal_id,))
         conn.commit()
         return {"id": animal[0], "tipo": animal[1], "raza": animal[2], "edad": animal[3], "vacunas": animal[4]}
-    finally:
-        cursor.close()
-        conn.close()
-
-# Ruta para actualizar un animal
-@app.put("/animales/{animal_id}", response_model=Animal)
-def actualizar_animal(animal_id: int, animal: Animal):
-    conn = get_db()
-    cursor = conn.cursor()
-    try:
-        cursor.execute("SELECT * FROM animales WHERE id = %s", (animal_id,))
-        existing_animal = cursor.fetchone()
-        if not existing_animal:
-            raise HTTPException(status_code=404, detail="Animal no encontrado")
-        
-        query = """
-        UPDATE animales SET tipo = %s, raza = %s, edad = %s, vacunas = %s WHERE id = %s
-        """
-        params = (animal.tipo, animal.raza, animal.edad, animal.vacunas, animal_id)
-        cursor.execute(query, params)
-        conn.commit()
-        
-        return {**animal.dict(), "id": animal_id}
     finally:
         cursor.close()
         conn.close()

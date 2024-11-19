@@ -102,27 +102,68 @@ def show_add_animal():
     ttk.Button(frame, text="Volver", command=show_admin_options).pack()
 
 def show_delete_animal():
-    clear_window()
-    frame = ttk.Frame(window, padding="20")
-    frame.place(relx=0.5, rely=0.5, anchor="center")
-
-    ttk.Label(frame, text="Eliminar Animal", font=("Arial", 16)).pack(pady=10)
-
-    ttk.Label(frame, text="ID del Animal:").pack(anchor="w")
-    animal_id_entry = ttk.Entry(frame, width=30)
-    animal_id_entry.pack(pady=5)
-
-    def delete_animal():
-        animal_id = animal_id_entry.get()
-        response = requests.delete(f"{API_URL}/animales/{animal_id}")
-        if response.status_code == 200:
-            messagebox.showinfo("Éxito", "Animal eliminado exitosamente")
-            show_admin_options()
+    response = requests.get(f'{API_URL}/animales/')
+    if response.status_code == 200:
+        animals = response.json()
+        clear_window()
+        ttk.Label(window, text="Eliminar Animal", font=("Arial", 16)).pack(pady=10)
+        
+        # Crear un dropdown con los animales
+        ttk.Label(window, text="Seleccione un animal para eliminar:").pack(anchor="w")
+        
+        animal_choices = []
+        for animal in animals:
+            # Manejar el caso donde no haya raza disponible
+            raza = animal['raza'] if animal['raza'] else "Desconocida"
+            animal_choices.append(f"{animal['tipo']} - {raza} (Edad: {animal['edad']})")
+        
+        animal_combobox = ttk.Combobox(window, values=animal_choices, width=40)
+        animal_combobox.pack(pady=5)
+        
+        def delete_animal():
+            selected_animal = animal_combobox.get()
+    print(f"selected_animal: {selected_animal}")
+    
+    # Extraer tipo, raza y edad
+    try:
+        # Intentamos dividir el texto como tipo - raza (Edad: x)
+        parts = selected_animal.split(" - ")
+        if len(parts) == 2:
+            tipo = parts[0]
+            raza_y_edad = parts[1].strip()
+            # Encontrar la edad en el formato "(Edad: x)"
+            edad_str = raza_y_edad.split(" (Edad: ")
+            if len(edad_str) == 2:
+                raza = edad_str[0]
+                edad = int(edad_str[1].replace(")", ""))  # Extraer la edad y eliminar el paréntesis
+                
+                # Buscar el animal con estos datos
+                animal_data = {
+                    "tipo": tipo,
+                    "raza": raza,
+                    "edad": edad
+                }
+                print(f"Enviando solicitud de eliminación con los siguientes datos: {animal_data}")
+                
+                response = requests.delete(f"{API_URL}/animales/eliminar_por_datos/", json=animal_data)
+                
+                # Mostrar más información de la respuesta para depuración
+                print(f"Respuesta de la API: {response.status_code} - {response.text}")
+                
+                if response.status_code == 200:
+                    messagebox.showinfo("Éxito", "Animal eliminado exitosamente")
+                    show_admin_options()
+                else:
+                    messagebox.showerror("Error", f"No se pudo eliminar el animal. Respuesta del servidor: {response.status_code} - {response.text}")
+            else:
+                messagebox.showerror("Error", "No se pudo extraer la edad correctamente.")
         else:
-            messagebox.showerror("Error", "No se pudo eliminar el animal")
+            messagebox.showerror("Error", "El formato del animal seleccionado es incorrecto.")
+    except Exception as e:
+        print(f"Error procesando la selección: {e}")
+        messagebox.showerror("Error", f"Error procesando la eliminación: {e}")
 
-    ttk.Button(frame, text="Eliminar", command=delete_animal).pack(pady=10)
-    ttk.Button(frame, text="Volver", command=show_admin_options).pack()
+
 
 def elegir_tipo_usuario():
     clear_window()
@@ -141,6 +182,4 @@ window.resizable(False, False)
 
 # Mostrar interfaz principal
 elegir_tipo_usuario()
-
 window.mainloop()
-
