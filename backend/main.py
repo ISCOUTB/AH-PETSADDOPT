@@ -3,8 +3,11 @@ from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel
 from typing import List
 import bcrypt
+import os
 
 # Configuración de conexión a la base de datos PostgreSQL
+user = os.environ["base1"]
+password = os.environ["123456"]
 DATABASE_URL = "postgresql://base1:123456@db:5432/Centro_animals"
 
 # Crear la instancia de la API
